@@ -18,6 +18,11 @@ Any code change must either adhere to our spec files perfectly or you should ask
 | `src/jarvis/reply/reply.spec.md` | LLM reply generation, tool use, profiles | Tools return raw data; profiles handle formatting |
 | `src/jarvis/reply/prompts/prompts.spec.md` | System/user prompt templates | — |
 | `src/jarvis/utils/location.spec.md` | GeoIP location detection | Privacy-first; local GeoLite2 DB only |
+| `src/jarvis/task_state.spec.md` | Task/step tracking, undo registry, approval flow | Session-scoped; reversible actions |
+| `src/jarvis/policy/policy.spec.md` | Tool approval, workspace confinement, risk assessment | Evaluation order; graceful degradation |
+| `src/jarvis/audit/audit.spec.md` | SQLite audit trail, task/step/policy logging, PII redaction | Durable, privacy-preserving; opt-in |
+| `src/jarvis/execution/execution.spec.md` | Process isolation for high-risk tool execution | Containment without full sandboxing |
+| `src/jarvis/runtime/runtime.spec.md` | Health tracking, graceful shutdown, service lifecycle | Critical + optional services |
 
 Avoid hardcoded language patterns as this assistant needs to support an arbitrary amount of different languages.
 
